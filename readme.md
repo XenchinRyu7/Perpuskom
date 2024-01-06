@@ -4,7 +4,9 @@ PerpusKom - Perpustakaan Buku Online
 Proyek ini adalah perpustakaan buku online yang memungkinkan pengguna (admin dan user) untuk mengelola peminjaman buku. Pengguna dapat mengajukan peminjaman buku kepada admin, dan admin dapat melakukan approve atau reject. Selanjutnya, pengguna akan menerima pesan tentang status peminjaman, dan dalam kehidupan nyata, pengguna dapat mengambil bukunya dari perpustakaan dengan menunjukkan informasi peminjaman kepada admin.
 
 ## Pengantar
-Proyek ini menggunakan Content Delivery Network (CDN) untuk menyediakan sumber daya seperti Bootstrap, library JavaScript, jQuery, dan font-awesome. Oleh karena itu, koneksi internet diperlukan saat menjalankan atau menggunakan proyek ini.
+**Proyek ini menggunakan Content Delivery Network (CDN) untuk menyediakan sumber daya seperti Bootstrap, library JavaScript, jQuery, dan font-awesome. Oleh karena itu, koneksi internet diperlukan saat menjalankan atau menggunakan proyek ini.**
+
+**Catatan: Proyek ini dibangun menggunakan PHP Native tanpa menggunakan framework.**
 
 ## Instalasi
 Clone repositori ini ke mesin lokal Anda.
