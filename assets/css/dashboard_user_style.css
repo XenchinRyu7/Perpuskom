@@ -1,0 +1,25 @@
+body {
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    margin: 6% 10px 10px 10px
+}
+
+.card {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
