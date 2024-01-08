@@ -285,36 +285,23 @@ include('toast.php');
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
     <script>
+
         function exportToPDF() {
-            var doc = new jsPDF({ putOnlyUsedFonts: true, orientation: "landscape" });
-            var data = [];
-            var headers = [];
+            const { jsPDF } = window.jspdf;
+            var table = document.getElementById('tablepeminjaman');
 
-            // Ambil header tabel
-            $("#dataTable th").each(function () {
-                headers.push($(this).text());
-            });
+            var doc = new jsPDF();
 
-            // Ambil data tabel
-            $("#dataTable tbody tr").each(function () {
-                var row = [];
-                $(this).find("td").each(function () {
-                    row.push($(this).text());
-                });
-                data.push(row);
-            });
+            doc.autoTable({ html: table });
 
-            doc.autoTable({
-                head: [headers],
-                body: data,
-            });
-
-            doc.save('laporan_peminjaman.pdf');
+            doc.save("laporan_peminjaman.pdf");
         }
 
         function exportToExcel() {
-            var table = document.getElementById('dataTable');
+            var table = document.getElementById('tablepeminjaman');
             var data = [];
             for (var i = 1; i < table.rows.length; i++) {
                 var row = [];
@@ -329,13 +316,7 @@ include('toast.php');
             XLSX.utils.book_append_sheet(wb, ws, 'Data Peminjaman');
             XLSX.writeFile(wb, 'laporan_peminjaman.xlsx');
         }
-    </script>
 
-    <script>
-        $(document).ready(function () {
-            $('#tablepeminjaman').DataTable();
-            $('#tablenotif').DataTable();
-        });
 
         function showToast(message, isError = true) {
             var toastEl = document.getElementById('liveToast');
@@ -365,6 +346,11 @@ include('toast.php');
                 unset($_SESSION['success_message']);
             }
             ?>
+        });
+
+        $(document).ready(function () {
+            $('#tablepeminjaman').DataTable();
+            $('#tablenotif').DataTable();
         });
     </script>
 

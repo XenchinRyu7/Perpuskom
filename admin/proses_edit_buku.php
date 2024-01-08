@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gambar = null;
 
     if (isset($_FILES["gambar"]) && $_FILES["gambar"]["error"] == UPLOAD_ERR_OK) {
-        $targetDir = "../images/";
+        $targetDir = "../assets/images/";
 
         if (!file_exists($targetDir)) {
             mkdir($targetDir, 0777, true);
